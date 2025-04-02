@@ -6886,7 +6886,9 @@ width: 100%;
 .jump-mt-50{
   margin-top: 50px;
 }
-
+.jump-mt-100{
+  margin-top: 100px;
+}
 button{
   background-color:white;
 }

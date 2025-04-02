@@ -12,6 +12,8 @@ use App\Http\Controllers\Public\{
     PressRoomController,
     AboutController,
     BlogShowController,
+    LoginController,
+    RegisterController,
 };
 
 use App\Http\Controllers\Admin\{
@@ -33,6 +35,12 @@ Route::group(['prefix' => 'home'], function () {
     Route::get('services', [ServicesController::class, 'index'])->name('public.services.index');
     Route::get('contact', [ContactController::class, 'index'])->name('public.contcat.index');
     Route::get('blog-show/{idPost}', [BlogShowController::class, 'index'])->name('public.blog.index');
+
+    Route::get('iniciar', [LoginController::class, 'index'])->name('public.login.index');
+    Route::post('iniciar', [LoginController::class, 'store'])->name('public.login.store');
+    Route::get('cerrar', [LoginController::class, 'logout'])->name('public.logout');
+    //Route::get('crear', [RegisterController::class, 'index'])->name('public.register.index');
+    //Route::post('crear', [RegisterController::class, 'store'])->name('public.register.store');
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -47,21 +55,21 @@ Route::get('/clear', function () {
     $run = Artisan::call('route:clear');
     $run = Artisan::call('config:cache');
     $run = Artisan::call('optimize');
-    return 'Limpieza del Sistema Terminada con exito';
+    return 'Cleanup Completed';
 });
 
 Route::get('/local', function () {
     Artisan::call('storage:link');
-    return 'La carpeta storage sea creado con exito';
+    return 'Location Successfully Created';
 });
 
 Route::get('/server', function () {
     if (file_exists(public_path('storage'))) {
-        return "La carpeta Storage ya existe";
+        return "The folder already exists";
     }
     app('files')->link(
         storage_path('app/public'),
         public_path('storage')
     );
-    return 'La carpeta storage sea creado con exito.';
+    return 'Server Successfully Created.';
 });

@@ -10,12 +10,12 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    /*use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     protected $primaryKey = 'idUser';
     public $timestamps    = false;
 
-    public function statu(){
+   /*public function statu(){
         return $this->belongsTo(Statu::class, 'idStatu');
     }*/
 }

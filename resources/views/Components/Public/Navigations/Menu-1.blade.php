@@ -40,6 +40,13 @@
                                     </li>
                                     <li class=""><a href="{{ route('public.contcat.index') }}">CONTACT</a>
                                     </li>
+                                    @guest
+                                    <li class=""><a href="{{ route('public.login.index') }}">Login</a></li>
+                                    @else
+                                        @if (Auth::user()->idRole == 1)
+                                            <li class=""><a href="{{ route('admin.blog.index') }}">"PANEL ADMIN"</a></li>
+                                        @endif
+                                    @endguest
                                 </ul>
                             </div>
                         </nav>
