@@ -9,7 +9,7 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         <span class="user-icon">
-                            <img src="" alt="" />
+                            <img src="{{ url('storage/icon/user.webp') }}" alt="user" />
                         </span>
                         @isset(Auth::user()->name)
                             <span class="user-name">{{ Auth::user()->name }}</span>
@@ -26,9 +26,8 @@
 
 <div class="left-side-bar">
     <div class="brand-logo">
-        <a href="index.html">
-            <img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
-            <img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo" />
+        <a href="javascript:;">
+            <img src="{{ url('storage/icon/logo.webp') }}" alt="logo" width="100" class="light-logo" />
         </a>
         <div class="close-sidebar" data-toggle="left-sidebar-close">
             <i class="ion-close-round"></i>

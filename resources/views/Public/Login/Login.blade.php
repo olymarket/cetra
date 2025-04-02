@@ -14,7 +14,7 @@
             @include('Components.Admin.Navigations.MessageAlert')
             <div class="row align-items-center">
                 <div class="col-md-6 col-lg-7">
-                    <img src="{{ url('image/2.webp') }}" alt="" />
+                    <img src="{{ url('storage/icon/login.webp') }}" alt="login" />
                 </div>
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">

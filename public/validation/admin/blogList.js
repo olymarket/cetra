@@ -26,12 +26,11 @@ function indexPost() {
                     <td>${post.date}</td>
                     <td>
                         <button class="btn btn-warning" onclick="editPost(${post.idPost})">
-                            <i class="icon-copy dw dw-edit"></i>&nbsp;Edit
+                            <i class="icon-copy dw dw-edit"></i>&nbsp;
                         </button>
-                    </td>
-                    <td>
+                    
                         <button class="btn btn-danger" onclick="deletePost(${post.idPost})">
-                            <i class="icon-copy dw dw-delete"></i>&nbsp;Delete
+                            <i class="icon-copy dw dw-delete"></i>&nbsp;
                         </button>
                     </td>`;
                 tableBody.appendChild(row);
